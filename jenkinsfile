@@ -1,8 +1,11 @@
 pipeline {
     agent {
         node {
-            label ''
-        }
+            label 'dev'
+        }    
+    }
+    triggers {
+        pollSCM '* * * *'
     }
     stages {
         stage('Build') {
